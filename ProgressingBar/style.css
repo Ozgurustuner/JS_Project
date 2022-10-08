@@ -1,0 +1,81 @@
+
+@import url('https://fonts.googleapis.com/css?family=Ubuntu@400;500;700&display=swap');
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Ubuntu', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+.container{
+    text-align: center;
+}
+.progress-container{
+    display: flex;
+    position: relative; 
+    justify-content: space-between;
+    margin-bottom: 30px; 
+    width: 350px;
+    max-width: 100%;
+}
+.progress-container::before{
+    content: "";
+    background-color: #3498db;
+    position: absolute;
+    top : 50%;
+    left: 0;
+    height: 4px;
+    width: 30%;
+    transform: translateY(-50%);
+    z-index: -1;
+    transition: 1s ease;
+}
+
+.progress{
+    background-color: #3498db;
+    position: absolute;
+    top : 50%;
+    left: 0;
+    height: 4px;
+    width: 0%;
+    transform: translateY(-50%);
+    z-index: -1;
+    transition: 1s ease;
+
+}
+.circle{
+    background-color: #fff;
+    color: #999;
+    border: 6px solid lightgrey;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.circle.active {
+    border-color:#3498db ;
+}
+.btn{
+    background-color: #3498db;
+    color: white;
+    border: 0;
+    border-radius: 6px;
+    padding: 8px 30px;
+    margin: 5px;
+    cursor: pointer;
+}
+.btn:active{
+   transform: scale(0.9); 
+}
+.btn:disabled{
+    background-color: #999;
+    cursor: not-allowed;
+}
